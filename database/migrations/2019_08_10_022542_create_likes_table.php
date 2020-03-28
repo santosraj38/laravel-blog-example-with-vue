@@ -17,7 +17,7 @@ class CreateLikesTable extends Migration
           $table->increments('id');
           $table->unsignedBigInteger('user_id');
 					$table->unsignedInteger('post_id');
-					$table->integer('like',1);
+					$table->integer('like');
 					$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 					$table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
 					$table->softDeletes();
